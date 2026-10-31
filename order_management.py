@@ -32,6 +32,8 @@ class Order:
             return 0.1
         elif code == "SAVE20":
             return 0.2
+        else:
+            return 0
         
 
 
