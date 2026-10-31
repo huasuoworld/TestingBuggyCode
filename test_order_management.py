@@ -14,6 +14,8 @@ def test_calculate_total(mock_order):
 
 def test_apply_discount(mock_order):
     discount = mock_order.apply_discount("SAVE30")
+    print(f"discount SAVE30 is {discount}")
+    assert discount is not None
 
 def test_add_item(mock_order):
     mock_order.add_item("Notebook", 3, 5.00)
