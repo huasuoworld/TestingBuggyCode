@@ -23,7 +23,7 @@ class Order:
 
     def print_summary(self):
         print("Order Summary for", self.customer_name)
-        for item in self.itemz: 
+        for item in self.items: 
             print(f"{item[1]} x {item[0]} @ ${item[2]:.2f}")
         print("Total: $", self.calculate_total())
 
