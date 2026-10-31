@@ -7,8 +7,10 @@ def mock_order():
 
 def test_calculate_total(mock_order):
     total = mock_order.calculate_total()
+    #calculate total price
     total_price = 2*15.00 + 5*1.50
-    # assert total == total_price
+    print(f"total is {total}, total_price is {total_price}")
+    assert total == total_price
 
 def test_apply_discount(mock_order):
     discount = mock_order.apply_discount("SAVE30")
