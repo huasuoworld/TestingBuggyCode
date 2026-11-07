@@ -14,7 +14,7 @@ class Order:
         return total
 
     def add_item(self, item_name, quantity, price):
-        self.items.append((item_name, quantity, price))  
+        self.items.append((item_name, int(quantity), float(price)))  
 
     def remove_item(self, item_name):
         for item in self.items:  

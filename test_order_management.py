@@ -26,3 +26,23 @@ def test_remove_item(mock_order):
 def test_print_summary(mock_order):
     mock_order.print_summary()
 
+def test_integration1(mock_order):
+    mock_order.add_item("Notebook", "3", 5.00)
+    mock_order.remove_item("Pen")
+    total = mock_order.calculate_total()
+    discount = mock_order.apply_discount("SAVE10")
+    final_total = total * (1 - discount)
+    print(f"Integration test - total: {total}, discount: {discount}, final_total: {final_total}")
+    assert total > 0
+    assert discount == 0.1
+
+def test_integration2(mock_order):
+    mock_order.add_item("Notebook", 3, "5.00")
+    mock_order.remove_item("Pen")
+    total = mock_order.calculate_total()
+    discount = mock_order.apply_discount("SAVE10")
+    final_total = total * (1 - discount)
+    print(f"Integration test - total: {total}, discount: {discount}, final_total: {final_total}")
+    assert total > 0
+    assert discount == 0.1
+
